@@ -34,11 +34,11 @@
     numberF.locale = [NSLocale localeWithLocaleIdentifier:@"ZH_CN"];
     //    numberF.formatWidth = 15;//15位输出,不足补 *
     NSNumber *number = @12345.6789;
-    numberF.numberStyle = NSNumberFormatterDecimalStyle;//12,345.679
+    numberF.numberStyle = NSNumberFormatterDecimalStyle;//小数形式：12,345.679
     NSLog(@"DecimalStyle: %@",[numberF stringFromNumber:number]);
-    numberF.numberStyle = NSNumberFormatterCurrencyStyle;//加钱币符号,中国:￥
+    numberF.numberStyle = NSNumberFormatterCurrencyStyle;//货币形式,中国:￥
     NSLog(@"CurrencyStyle: %@",[numberF stringFromNumber:number]);
-    numberF.numberStyle = NSNumberFormatterPercentStyle;//带百分百
+    numberF.numberStyle = NSNumberFormatterPercentStyle;//百分百
     NSLog(@"PercentStyle: %@",[numberF stringFromNumber:number]);
     numberF.numberStyle = NSNumberFormatterScientificStyle;//科学计数
     NSLog(@"ScientificStyle: %@",[numberF stringFromNumber:number]);
@@ -54,8 +54,8 @@
     numberF.minimumIntegerDigits = 1;
     numberF.minimumFractionDigits = 0;
     numberF.maximumFractionDigits = 3;
-    numberF.positiveSuffix = @" AA";//正数后缀
-    numberF.negativePrefix = @"BB -";//负数前缀,会替换 '-'号
+//    numberF.positiveSuffix = @" AA";//正数后缀
+//    numberF.negativePrefix = @"BB -";//负数前缀,会替换 '-'号
     
     numberF.roundingMode = NSNumberFormatterRoundCeiling;
     NSLog(@"RoundCeiling: %@",[numberF stringFromNumber:number]);
@@ -72,6 +72,12 @@
     numberF.roundingMode = NSNumberFormatterRoundHalfUp;
     
     NSLog(@"RoundHalfUp: %@",[numberF stringFromNumber:@-1.0]);
+    
+    
+    numberF.roundingIncrement = @10;
+    NSLog(@"156 roundingIncrement %@",[numberF stringFromNumber:@(156)]);
+    NSLog(@"154 roundingIncrement %@",[numberF stringFromNumber:@(154)]);
+    
 }
 
 - (IBAction)changeNumber:(id)sender {
