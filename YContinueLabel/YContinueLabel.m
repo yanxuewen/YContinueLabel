@@ -2,7 +2,7 @@
 //  YContinueLabel.m
 //  YContinueLabel
 //
-//  Created by 颜学文 on 16/5/29.
+//  Created by yxw on 16/5/29.
 //  Copyright © 2016年 yxw. All rights reserved.
 //
 

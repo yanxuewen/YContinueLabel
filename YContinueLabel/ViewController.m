@@ -2,7 +2,7 @@
 //  ViewController.m
 //  YContinueLabel
 //
-//  Created by 颜学文 on 16/5/29.
+//  Created by yxw on 16/5/29.
 //  Copyright © 2016年 yxw. All rights reserved.
 //
 
@@ -77,7 +77,9 @@
     numberF.roundingIncrement = @10;
     NSLog(@"156 roundingIncrement %@",[numberF stringFromNumber:@(156)]);
     NSLog(@"154 roundingIncrement %@",[numberF stringFromNumber:@(154)]);
-    
+    numberF.roundingIncrement = @0.01;
+    NSLog(@"156.6666 roundingIncrement %@",[numberF stringFromNumber:@(156.6666)]);
+    NSLog(@"154.4444 roundingIncrement %@",[numberF stringFromNumber:@(154.4444)]);
 }
 
 - (IBAction)changeNumber:(id)sender {
